@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1>Twenty Others Game<span class="badge">Beta</span></h1>
+        <h2>On the way make a broader mind and be way more creative.</h2>
+        <p>One of my teacher from my University once told me that I should start playing the game, 
+            in which I will try to list out 20 or more other applications of an normal things around us. 
+            This way will not only help me avoiding "narrow-minded", which is quite common in technical guys, 
+            but also boost my creativity everyday.
+        </p>
+        <p>So now is your free time, why not try to play this game.</p>
+        <p>
+            <a class="btn btn-primary" href="http://www.quora.com/How-can-I-make-myself-more-broad-minded" role="button">Learn more on Quora</a>
+            <a class="btn btn-success" href="#/twentyOther/discover" role="button">Discover...</a>
+        </p>
+    </div>
+
+
+    <div class="row">
+        <div class="row">
+            <div class="col-md-4 " id="image-object">
+                <legend style="text-align: center;">
+                    {{object.name}}
+                    <span class="fa fa-refresh" ng-click="loadObject()"></span>
+                </legend>
+                <img class="img-thumbnail center" src="{{object.image_url}}">
+            </div>
+            <div class="col-md-4 ">
+                <form class="" role="form" ng-submit="saveIdea()" >
+                    <div class="form-group col-md-9">
+                        <label class="sr-only" for="new-application"></label>
+                        <input ng-model="newIdea.text" type="text" class="form-control " id="new-application" placeholder="It can be used to..." required>
+                    </div>
+                    <div class="col-md-3">
+                    <button type="submit" class="btn btn-success">Make it</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4 ">
+                <ol>
+                    <li ng-repeat="idea in ideaList"><p>{{idea.text}}</p></li>
+                </ol>
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4" ng-show="ideaList.length > 0">
+                <button ng-click="submitIdeas()" class="btn btn-success btn-block">Submit the my ideas</button>
+            </div>
+        </div>
+    </div>
+</div>

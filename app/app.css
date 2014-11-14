@@ -28,3 +28,19 @@
   content: "";
   padding: 0;
 }
+
+/*
+ * CSS for the TwentyOther page
+ */
+.center {
+    margin: 0 auto;
+    float: center;
+}
+
+/* Head Jumbotron */
+.jumbotron {
+    margin-top: 20px;
+}
+.jumbotron p {
+ font-size: 14px; 
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+Code written by Nguyen Van Hung at @imrhung
+Feel free to re-use or share it.
+Happy code!!!
+-->
+<div class="container">
+    <div class="jumbotron">
+        <h1>Twenty Others Game<span class="badge">Beta</span></h1>
+        <p>Here is what other people has made so far.
+        </p>
+        <p>
+            <a class="btn btn-success" href="#/twentyOther" role="button">Play now!!!</a>
+        </p>
+    </div>
+
+    <div class="">
+        <div infinite-scroll="nextPage()" infinite-scroll-disabled="stop">
+            <div ng-repeat="record in recordList">
+                <!--<div class="col-md-4">-->
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        {{record.first_name +" "+record.last_name}} created ideas on {{record.name}}:
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <img class="img img-thumbnail" src="{{record.image_url}}">
+                            </div>
+                            <div class="col-xs-9">
+                                <ol>
+                                    <li ng-repeat="idea in record.ideas"><p>{{idea.content}}</p></li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                    </div>
+                <!--</div>-->
+                </div>
+            </div>
+            <div ng-show='busy'>Loading ideas...</div>
+            <div ng-show='stop'>We run out of idea. It's time for you to contribute :)</div>
+        </div>
+    </div>
+</div>
